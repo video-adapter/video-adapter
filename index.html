@@ -226,7 +226,7 @@ During sampling, Video Adapter composes the scores of the pretrained and the dom
       }
 
       function addVideoPane2() {
- videos = [
+ hdvideos = [
      {"caption": "Adapted - Walks on the Grass", "src": "videos/nav1-crop.mp4"},
      {"caption": "Adapted - Walks around", "src": "videos/nav2-crop.mp4"},
      {"caption": "Adapted - Walks forward", "src": "videos/nav3-crop.mp4"},
@@ -245,15 +245,34 @@ During sampling, Video Adapter composes the scores of the pretrained and the dom
 
      {"caption": "Adapted - Put Pot or Pan in Sink", "src": "videos/combine1.mp4"},
      {"caption": "Adapted - Put Corn into Bowl", "src": "videos/combine4.mp4"},
+
+     {"caption": "Adapted - Looks at the Phone Screen", "src": "videos/ego1-crop.mp4"},
+     {"caption": "Adapted - Wipes the Tip of the Detail Needle with Her Left Hand", "src": "videos/ego2-crop.mp4"},
+     {"caption": "Adapted - Paints the Piece of Wood", "src": "videos/ego3-crop.mp4"},
+     {"caption": "Adapted - Pats the Clay in the Mould with His Right Hand", "src": "videos/ego4-crop.mp4"},
+     {"caption": "Adapted - Dips Paintbrush in Paint in the Bucket", "src": "videos/ego5-crop.mp4"},
+     {"caption": "Adapted - Rubs the Pink Ball in Both Hand", "src": "videos/ego6-crop.mp4"},
+     {"caption": "Adapted - Adjusts the Jig Saw with Both Hands", "src": "videos/ego7-crop.mp4"},
+     {"caption": "Adapted - Walks around", "src": "videos/ego8-crop.mp4"},
+     {"caption": "Adapted - Dries the Greens with Kitchen Tissue", "src": "videos/ego9-crop.mp4"},
+     {"caption": "Adapted - Picks a Scrubber", "src": "videos/ego10-crop.mp4"},
+     {"caption": "Adapted - Cuts the Piece of Wood with the Miter Saw", "src": "videos/ego11-crop.mp4"},
+     {"caption": "Adapted - Look at the Food", "src": "videos/ego12-crop.mp4"},
+     {"caption": "Adapted - Place the Piece", "src": "videos/ego13-crop.mp4"},
+     {"caption": "Adapted - Turns over the Dough", "src": "videos/ego14-crop.mp4"},
+
+     {"caption": "Adapted - Put Eggplant in Pot", "src": "videos/combine2.mp4"},
+     {"caption": "Adapted - Put Pan from Drying Rack into Sink", "src": "videos/combine3.mp4"},
  ];
+	  eg4d_videos = hdvideos.sort((a, b) => 0.5 - Math.random());;
 
  globalVideoIdx = 0;
 
  function updateVideoSlot(idxVideo, idxSlot) {
    slot = $("#video_gallery2 > div").eq(idxSlot);
 
-   src = videos[idxVideo].src;
-   caption = videos[idxVideo].caption;
+   src = eg4d_videos[idxVideo].src;
+   caption = eg4d_videos[idxVideo].caption;
 
    slot.find("div.video_container > video > source").attr("src", src);
    slot.find("div.video_container > video")[0].load();
@@ -261,21 +280,23 @@ During sampling, Video Adapter composes the scores of the pretrained and the dom
  }
 
  function updateVideoGallery() {
-   numVideos = videos.length;
+   numVideos = eg4d_videos.length;
    idxVideo = Math.floor(Math.random() * numVideos);
 
    numSlots = $("#video_gallery2 > div").length;
    idxSlot = Math.floor(Math.random() * numSlots);
 
    globalVideoIdx = ++globalVideoIdx % numVideos;
-   updateVideoSlot(globalVideoIdx, idxSlot);
+     updateVideoSlot(globalVideoIdx, idxSlot);
+
+     setTimeout(updateVideoGallery, 1000);
  }
 
  function updateAllVideoSlots() {
-   numVideos = videos.length;
+   numVideos = eg4d_videos.length;
    numSlots = $("#video_gallery2 > div").length;
 
-   globalVideoIdx = 0;
+   globalVideoIdx = Math.floor(Math.random() * numVideos);
    for (var i = 0; i < numSlots; ++i, ++globalVideoIdx) {
      globalVideoIdx = globalVideoIdx % numVideos;
      updateVideoSlot(globalVideoIdx, i);
@@ -319,7 +340,8 @@ During sampling, Video Adapter composes the scores of the pretrained and the dom
    addVideoSlot(i);
  }
 
-    updateAllVideoSlots();
+	  updateAllVideoSlots();
+	  setTimeout(updateVideoGallery, 1000);
       }
 
       function addVideoPane1() {
