@@ -109,20 +109,12 @@ div.video_container div.caption {
   padding: 0;
 }
 
-div.video_container:hover div.caption {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
 div.video_container div.caption div {
   margin: 0 auto;
   display: none;
   font-size: 1.25em;
   padding: 25px;
   text-align: center;
-}
-
-div.video_container:hover div.caption div {
-  display: block;
 }
 
 video {
@@ -418,4 +410,21 @@ div.unet_component {
     font-size: 2em;
   }
 
+}
+
+
+div.video_container:active div.caption {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+div.video_container:active div.caption div {
+  display: block;
+}
+
+div.video_container:hover div.caption {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+div.video_container:hover div.caption div {
+  display: block;
 }
