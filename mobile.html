@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@200;400" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <meta property="og:site_name" content="Video Adapter: Probabilistic Adaptation of Text-to-Video Models" />
+    <meta property="og:type" content="video.other" />
+    <meta property="og:title" content="Video Adapter" />
+    <meta property="og:description" content="Probabilistic Adaptation of Text-to-Video Models" />
+
+    <title>Video Adapter</title>
+  </head>
+  <body>
+    <div class="video_1" id="video_gallery">
+    </div>
+
+    <div class="header" style="background-color: #202020;" id="header_box">
+      <div style="position: sticky; top: 0; height: 100vh;" id="header_container">
+        <div id="header_video" class="stack" style="display: flex; align-content: center; height: 100vh; overflow-y: hidden;">
+          <video id="video" style="opacity: 0.0; width: 100%; object-fit: contain;" autoplay loop muted playsinline><source src="videos/anime1-1.mp4" type="video/mp4"></video>
+        </div>
+        <div class="stack">
+          <div class="title" id="title">
+            <h1>Video Adapter</h1>
+            <h2>Efficient Adaption of Text-to-Video Foundation Models</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="video_2" id="video_gallery2">
+    </div>
+
+    <div class="section_header">
+      <h1>Probabilistic Aaptation of Text-to-Video Models (Mobile Version)</h1>
+
+      <div id="authors" style="font-size: 1.5em">
+        <center>
+            <div class="author-row-new">
+              <a href="https://sherryy.github.io/">Mengjiao Yang*<sup>12</sup></a>,
+              <a href="https://yilundu.github.io/">Yilun Du*<sup>13</sup></a>,
+              <a href="https://sites.google.com/site/daibohr/">Bo Dai<sup>1</sup></a>,
+              <a href="http://webdocs.cs.ualberta.ca/~dale/">Dale Schuurmans<sup>14</sup></a>,
+              <a href="http://web.mit.edu/cocosci/josh.html">Joshua B. Tenenbaum<sup>3</sup></a>,
+              <a href="http://people.eecs.berkeley.edu/~pabbeel/">Pieter Abbeel<sup>2</sup></a>
+            </div>
+        </center>
+        <center>
+        <div class="affiliations">
+            <span><sup>1</sup> Google DeepMind</span>
+            <span><sup>2</sup> UC Berkeley</span>
+            <span><sup>3</sup> MIT</span>
+            <span><sup>4</sup> University of Alberta</span><br/>
+        </div>
+
+        <br>*indicates equal contribution.
+      </div>      
+    </div>
+
+    <div class="abstract">
+      <div style="margin: 50px auto;">
+        <h1 style="font-weight: 400;">Abstract</h1>
+        <p style="padding-bottom: 25px; text-align: justify; font-weight: 300;">Large text-to-video models trained on internet-scale data have demonstrated exceptional capabilities in generating high-fidelity videos from arbitrary textual descriptions. However, adapting these models to tasks with limited domain-specific data, such as animation or robotics videos, poses a significant computational challenge, since finetuning a pretrained large model can be prohibitively expensive. Inspired by how a small modifiable component (e.g., prompts, prefix-tuning) can adapt a large language model to perform new tasks without requiring access to the model weights, we investigate how to adapt a large pretrained text-to-video model to a variety of downstream domains and tasks without finetuning. In answering this question, we propose Video Adapter, which leverages the score function of a large pretrained video diffusion model as a probabilistic prior to guide the generation of a task-specific small video model. Our experiments show that Video Adapter is capable of incorporating the broad knowledge and preserving the high fidelity of a large pretrained video model in a task-specific small video model that is able to generate high-quality yet specialized videos on a variety of tasks such as animation, egocentric modeling, and modeling of simulated and real-world robotics data.</p>
+        <p><a class="read-paper" href="paper.pdf"><button>Research Paper</button></a></p>
+      </div>
+    </div>
+
+    <div class="section_header">
+      <h1>Video Adapter Framework</h1>
+      <h2>Adaptation through Score Composition</h2>
+    </div>
+
+
+    <div class="abstract">
+      <div style="margin: 50px auto;">
+      <p style="padding-bottom: 25px; text-align: justify; font-weight: 300;">Video Adapter only requires training a small domain-specific text-to-video model with orders of magnitude fewer parameters than a large video model pretrained from internet data.
+During sampling, Video Adapter composes the scores of the pretrained and the domain specific video models,
+	achieving high-quality and flexible video synthesis.</p>
+      </div>
+    </div>
+
+    <div id="zoom_box2">
+        <div style="position: sticky; top: 0; left: 0; height: calc(100vh + 100px); width: 100vw; overflow-x: hidden;">
+              <video autoplay loop muted playsinline><source src="videos/framework.mp4" type="video/mp4"></video>
+        </div>
+    </div>
+
+    <div class="section_header">
+      <h1>Video Adapter for Animation and Robotics</h1>
+    </div>
+
+    <div class="abstract">
+      <div style="margin: 50px auto;">
+	<p style="padding-bottom: 25px; text-align: justify; font-weight: 300;">We can train a small video model on an animation style of a particular artist (Detective Conan). The pretrained prior can maintain the artist's style while changing the background. We can also train task-specific small edge-to-sim and edge-to-real models on robotic videos. The pretrained prior can be used to modify the styles of the videos as a form of domain randomization.
+	</p>
+      </div>
+    </div>
+    
+    <div class="video_3" id="video_gallery3">
+    </div>
+
+    <div class="section_header">
+      <h1>Citation</h1>
+    </div>
+
+
+    <div class="abstract">
+    <div style="margin: 10px auto;">
+      <pre style="font-size: 20px;">
+	<code>@article{
+	  yang2023probabilistic,
+	  title={Probabilistic Adaptation of Text-to-Video Models},
+	  author={Yang, Mengjiao and Du, Yilun and Dai, Bo and
+	          Schuurmans, Dale and Tenenbaum, Joshua B and Abbeel, Pieter},
+	  journal={arXiv e-prints},
+	  pages={arXiv--2302},
+	  year={2023}
+	  }
+	</code>
+      </pre>
+    </div>
+    </div>
+    
+    <script>
+
+      function addVideoPane3() {
+	  videos = [
+	      {"caption": "Detective Conan Anime (edge)", "src": "videos/conan_edge_resize.mp4"},
+	      {"caption": "Detective Conan Anime (small)", "src": "videos/conan.mp4"},
+     {"caption": "Abstract Style", "src": "videos/conan_abstract.mp4"},
+     {"caption": "Dark Background", "src": "videos/conan_dark.mp4"},
+     
+     {"caption": "Move the Red Block towards the Blue Block (edge)", "src": "videos/edge5_resize.mp4"},
+     {"caption": "Simulation", "src": "videos/sim5.mp4"},
+     {"caption": "Real", "src": "videos/real5.mp4"},
+     {"caption": "Colorful Stylisation", "src": "videos/adapt5.mp4"},
+
+     {"caption": "Push the Green Star into the Red Circle (edge)", "src": "videos/edge9_resize.mp4"},
+     {"caption": "Simulation", "src": "videos/sim9.mp4"},
+     {"caption": "Real", "src": "videos/real9.mp4"},
+     {"caption": "Dark Stylisation", "src": "videos/adapt9.mp4"},
+ ];
+
+ globalVideoIdx = 0;
+
+ function updateVideoSlot(idxVideo, idxSlot) {
+   slot = $("#video_gallery3 > div").eq(idxSlot);
+
+   src = videos[idxVideo].src;
+   caption = videos[idxVideo].caption;
+
+   slot.find("div.video_container > video > source").attr("src", src);
+   slot.find("div.video_container > video")[0].load();
+   slot.find("div.video_container > div.caption > div").text(caption);
+ }
+
+ function updateVideoGallery() {
+   numVideos = videos.length;
+   idxVideo = Math.floor(Math.random() * numVideos);
+
+   numSlots = $("#video_gallery3 > div").length;
+   idxSlot = Math.floor(Math.random() * numSlots);
+
+   globalVideoIdx = ++globalVideoIdx % numVideos;
+   updateVideoSlot(globalVideoIdx, idxSlot);
+ }
+
+ function updateAllVideoSlots() {
+   numVideos = videos.length;
+   numSlots = $("#video_gallery3 > div").length;
+
+   globalVideoIdx = 0;
+   for (var i = 0; i < numSlots; ++i, ++globalVideoIdx) {
+     globalVideoIdx = globalVideoIdx % numVideos;
+     updateVideoSlot(globalVideoIdx, i);
+   }
+ }
+
+ function addVideoSlot(idx) {
+   if (idx < 8) {
+     template = `
+   <div class="video_wrapper">
+     <div class="video_container">
+       <video autoplay loop muted playsinline><source src="videos/anime1-1.mp4" type="video/mp4"></video>
+       <div class="caption">
+	 <div></div>
+       </div>
+     </div>
+   </div>
+   `;
+   } else {
+     template = `
+   <div class="video_wrapper nomobile">
+     <div class="video_container">
+       <video autoplay loop muted playsinline><source src="videos/anime1-1.mp4" type="video/mp4"></video>
+       <div class="caption">
+	 <div></div>
+       </div>
+     </div>
+   </div>
+   `;
+   }
+
+   $("#video_gallery3").append(template);
+ }
+
+ function playVideo(id, src) {
+   $(id + " video > source").attr("src", src);
+   $(id + " video")[0].load();
+ }
+
+ for (var i = 0; i < 12; ++i) {
+   addVideoSlot(i);
+ }
+
+    updateAllVideoSlots();
+      }
+
+      function addVideoPane2() {
+ hdvideos = [
+     {"caption": "Adapted - Walks on the Grass", "src": "videos/nav1-crop.mp4"},
+     {"caption": "Adapted - Walks around", "src": "videos/nav2-crop.mp4"},
+     {"caption": "Adapted - Walks forward", "src": "videos/nav3-crop.mp4"},
+     {"caption": "Adapted - Walks a Few Steps", "src": "videos/nav4-crop.mp4"},
+     {"caption": "Adapted - Walks", "src": "videos/nav5-crop.mp4"},
+     {"caption": "Adapted - Walks towards the Shelf", "src": "videos/nav6-crop.mp4"},
+     
+     {"caption": "Adapted - Removes Left Hand from Cable at the Bicycle's Seat", "src": "videos/gen1-crop.mp4"},
+     {"caption": "Adapted - Drills the Wood with the Drill", "src": "videos/gen2-crop.mp4"},
+     {"caption": "Adapted - Drops a Fabric", "src": "videos/gen3-crop.mp4"},
+     {"caption": "Adapted - Drops the Slice of Cheese on the Sink", "src": "videos/gen4-crop.mp4"},
+     {"caption": "Adapted - Puts Wood on Table", "src": "videos/gen5-crop.mp4"},
+     {"caption": "Adapted - Holds the Book with Both Hand", "src": "videos/gen6-crop.mp4"},
+     {"caption": "Adapted - Unties the Plant ", "src": "videos/gen7-crop.mp4"},
+     {"caption": "Adapted - Scrubs Hands on the Sand on the Floor", "src": "videos/gen8-crop.mp4"},
+
+     {"caption": "Adapted - Put Pot or Pan in Sink", "src": "videos/combine1.mp4"},
+     {"caption": "Adapted - Put Corn into Bowl", "src": "videos/combine4.mp4"},
+
+     {"caption": "Adapted - Looks at the Phone Screen", "src": "videos/ego1-crop.mp4"},
+     {"caption": "Adapted - Wipes the Tip of the Detail Needle with Her Left Hand", "src": "videos/ego2-crop.mp4"},
+     {"caption": "Adapted - Paints the Piece of Wood", "src": "videos/ego3-crop.mp4"},
+     {"caption": "Adapted - Pats the Clay in the Mould with His Right Hand", "src": "videos/ego4-crop.mp4"},
+     {"caption": "Adapted - Dips Paintbrush in Paint in the Bucket", "src": "videos/ego5-crop.mp4"},
+     {"caption": "Adapted - Rubs the Pink Ball in Both Hand", "src": "videos/ego6-crop.mp4"},
+     {"caption": "Adapted - Adjusts the Jig Saw with Both Hands", "src": "videos/ego7-crop.mp4"},
+     {"caption": "Adapted - Walks around", "src": "videos/ego8-crop.mp4"},
+     {"caption": "Adapted - Dries the Greens with Kitchen Tissue", "src": "videos/ego9-crop.mp4"},
+     {"caption": "Adapted - Picks a Scrubber", "src": "videos/ego10-crop.mp4"},
+     {"caption": "Adapted - Cuts the Piece of Wood with the Miter Saw", "src": "videos/ego11-crop.mp4"},
+     {"caption": "Adapted - Look at the Food", "src": "videos/ego12-crop.mp4"},
+     {"caption": "Adapted - Place the Piece", "src": "videos/ego13-crop.mp4"},
+     {"caption": "Adapted - Turns over the Dough", "src": "videos/ego14-crop.mp4"},
+
+     {"caption": "Adapted - Put Eggplant in Pot", "src": "videos/combine2.mp4"},
+     {"caption": "Adapted - Put Pan from Drying Rack into Sink", "src": "videos/combine3.mp4"},
+ ];
+	  eg4d_videos = hdvideos.sort((a, b) => 0.5 - Math.random());;
+
+ globalVideoIdx = 0;
+
+ function updateVideoSlot(idxVideo, idxSlot) {
+   slot = $("#video_gallery2 > div").eq(idxSlot);
+
+   src = eg4d_videos[idxVideo].src;
+   caption = eg4d_videos[idxVideo].caption;
+
+   slot.find("div.video_container > video > source").attr("src", src);
+   slot.find("div.video_container > video")[0].load();
+   slot.find("div.video_container > div.caption > div").text(caption);
+ }
+
+ function updateVideoGallery() {
+   numVideos = eg4d_videos.length;
+   idxVideo = Math.floor(Math.random() * numVideos);
+
+   numSlots = $("#video_gallery2 > div").length;
+   idxSlot = Math.floor(Math.random() * numSlots);
+
+   globalVideoIdx = ++globalVideoIdx % numVideos;
+     updateVideoSlot(globalVideoIdx, idxSlot);
+
+     setTimeout(updateVideoGallery, 1000);
+ }
+
+ function updateAllVideoSlots() {
+   numVideos = eg4d_videos.length;
+   numSlots = $("#video_gallery2 > div").length;
+
+   globalVideoIdx = Math.floor(Math.random() * numVideos);
+   for (var i = 0; i < numSlots; ++i, ++globalVideoIdx) {
+     globalVideoIdx = globalVideoIdx % numVideos;
+     updateVideoSlot(globalVideoIdx, i);
+   }
+ }
+
+ function addVideoSlot(idx) {
+   if (idx < 8) {
+     template = `
+   <div class="video_wrapper">
+     <div class="video_container">
+       <video autoplay loop muted playsinline><source src="videos/anime1-1.mp4" type="video/mp4"></video>
+       <div class="caption">
+	 <div></div>
+       </div>
+     </div>
+   </div>
+   `;
+   } else {
+     template = `
+   <div class="video_wrapper nomobile">
+     <div class="video_container">
+       <video autoplay loop muted playsinline><source src="videos/anime1-1.mp4" type="video/mp4"></video>
+       <div class="caption">
+	 <div></div>
+       </div>
+     </div>
+   </div>
+   `;
+   }
+
+   $("#video_gallery2").append(template);
+ }
+
+ function playVideo(id, src) {
+   $(id + " video > source").attr("src", src);
+   $(id + " video")[0].load();
+ }
+
+ for (var i = 0; i < 16; ++i) {
+   addVideoSlot(i);
+ }
+
+	  updateAllVideoSlots();
+	  setTimeout(updateVideoGallery, 1000);
+      }
+
+      function addVideoPane1() {
+ videos = [
+     {"caption": "Original - Happy Holidays Animated Card", "src": "videos/anime1-1.mp4"},
+     {"caption": "Adapted - Storybook Illustration", "src": "videos/anime1-3.mp4"},
+     {"caption": "Adapted - Digital Art", "src": "videos/anime1-4.mp4"},
+     {"caption": "Adapted - Outdoors Video", "src": "videos/anime1-5.mp4"},
+
+     {"caption": "Original - Podium with Moving Clouds and Lamps", "src": "videos/anime2-1.mp4"},
+     {"caption": "Adapted - Arcade Style", "src": "videos/anime2-2.mp4"},
+     {"caption": "Adapted - Blue Sunny Day", "src": "videos/anime2-3.mp4"},
+     {"caption": "Adapted - Scifi", "src": "videos/anime2-4.mp4"},
+
+     {"caption": "Original - Astronaut on the Moon Surface near a US Flag", "src": "videos/scifi1-1.mp4"},
+     {"caption": "Adapted - Concept Art", "src": "videos/scifi1-2.mp4"},
+     {"caption": "Adapted - Black and White", "src": "videos/scifi1-3.mp4"},
+     {"caption": "Adapted - Vintage Film", "src": "videos/scifi1-4.mp4"},
+
+     {"caption": "Original - Retro Night City ", "src": "videos/scifi2-1.mp4"},
+     {"caption": "Adapted - Dark Night Sky", "src": "videos/scifi2-2.mp4"},
+     {"caption": "Adapted - Red Sun over Stadium", "src": "videos/scifi2-3.mp4"},
+     {"caption": "Adapted - Snow Falling", "src": "videos/scifi2-4.mp4"},
+ ];
+
+ globalVideoIdx = 0;
+
+ function updateVideoSlot(idxVideo, idxSlot) {
+   slot = $("#video_gallery > div").eq(idxSlot);
+
+   src = videos[idxVideo].src;
+   caption = videos[idxVideo].caption;
+
+   slot.find("div.video_container > video > source").attr("src", src);
+   slot.find("div.video_container > video")[0].load();
+   slot.find("div.video_container > div.caption > div").text(caption);
+ }
+
+ function updateVideoGallery() {
+   numVideos = videos.length;
+   idxVideo = Math.floor(Math.random() * numVideos);
+
+   numSlots = $("#video_gallery > div").length;
+   idxSlot = Math.floor(Math.random() * numSlots);
+
+   globalVideoIdx = ++globalVideoIdx % numVideos;
+   updateVideoSlot(globalVideoIdx, idxSlot);
+ }
+
+ function updateAllVideoSlots() {
+   numVideos = videos.length;
+   numSlots = $("#video_gallery > div").length;
+
+   globalVideoIdx = 0;
+   for (var i = 0; i < numSlots; ++i, ++globalVideoIdx) {
+     globalVideoIdx = globalVideoIdx % numVideos;
+     updateVideoSlot(globalVideoIdx, i);
+   }
+ }
+
+ function addVideoSlot(idx) {
+   if (idx < 8) {
+     template = `
+   <div class="video_wrapper">
+     <div class="video_container">
+       <video autoplay loop muted playsinline><source src="videos/anime1-1.mp4" type="video/mp4"></video>
+       <div class="caption">
+	 <div></div>
+       </div>
+     </div>
+   </div>
+   `;
+   } else {
+     template = `
+   <div class="video_wrapper nomobile">
+     <div class="video_container">
+       <video autoplay loop muted playsinline><source src="videos/anime1-1.mp4" type="video/mp4"></video>
+       <div class="caption">
+	 <div></div>
+       </div>
+     </div>
+   </div>
+   `;
+   }
+
+   $("#video_gallery").append(template);
+ }
+
+ function playVideo(id, src) {
+   $(id + " video > source").attr("src", src);
+   $(id + " video")[0].load();
+ }
+
+ for (var i = 0; i < 16; ++i) {
+   addVideoSlot(i);
+ }
+
+    updateAllVideoSlots();
+}      
+
+      addVideoPane1();
+      addVideoPane2();
+      addVideoPane3();
+
+$(window).scroll(function() {
+  $("#title").each(title);
+});
+    </script>
+  </body>
+</html>
