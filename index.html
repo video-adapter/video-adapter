@@ -135,20 +135,20 @@ During sampling, Video Adapter composes the scores of the pretrained and the dom
 
       function addVideoPane3() {
 	  videos = [
-	      {"caption": "Detective Conan Anime (edge)", "src": "videos/conan_edge_resize.mp4"},
-	      {"caption": "Detective Conan Anime (small)", "src": "videos/conan.mp4"},
-     {"caption": "Abstract Style", "src": "videos/conan_abstract.mp4"},
-     {"caption": "Dark Background", "src": "videos/conan_dark.mp4"},
+	      {"caption": "Edge Condition - Detective Conan Anime", "src": "videos/conan_edge_resize.mp4"},
+	      {"caption": "Generation - Detective Conan Anime", "src": "videos/conan.mp4"},
+     {"caption": "Adapted Generation - Abstract Style", "src": "videos/conan_abstract.mp4"},
+     {"caption": "Adapted Generation - Dark Background", "src": "videos/conan_dark.mp4"},
      
-     {"caption": "Move the Red Block towards the Blue Block (edge)", "src": "videos/edge5_resize.mp4"},
-     {"caption": "Simulation", "src": "videos/sim5.mp4"},
-     {"caption": "Real", "src": "videos/real5.mp4"},
-     {"caption": "Colorful Stylisation", "src": "videos/adapt5.mp4"},
+     {"caption": "Edge Generation - Move the Red Block towards the Blue Block", "src": "videos/edge5_resize.mp4"},
+     {"caption": "Generation - Simulation", "src": "videos/sim5.mp4"},
+     {"caption": "Generation - Real", "src": "videos/real5.mp4"},
+     {"caption": "Adapted Generation - Colorful Stylisation", "src": "videos/adapt5.mp4"},
 
-     {"caption": "Push the Green Star into the Red Circle (edge)", "src": "videos/edge9_resize.mp4"},
-     {"caption": "Simulation", "src": "videos/sim9.mp4"},
-     {"caption": "Real", "src": "videos/real9.mp4"},
-     {"caption": "Dark Stylisation", "src": "videos/adapt9.mp4"},
+     {"caption": "Edge Condition - Push the Green Star into the Red Circle", "src": "videos/edge9_resize.mp4"},
+     {"caption": "Generation - Simulation", "src": "videos/sim9.mp4"},
+     {"caption": "Generation - Real", "src": "videos/real9.mp4"},
+     {"caption": "Adapted generation - Dark Stylisation", "src": "videos/adapt9.mp4"},
  ];
 
  globalVideoIdx = 0;
@@ -228,42 +228,42 @@ During sampling, Video Adapter composes the scores of the pretrained and the dom
 
       function addVideoPane2() {
  hdvideos = [
-     {"caption": "Adapted - Walks on the Grass", "src": "videos/nav1-crop.mp4"},
-     {"caption": "Adapted - Walks around", "src": "videos/nav2-crop.mp4"},
-     {"caption": "Adapted - Walks forward", "src": "videos/nav3-crop.mp4"},
-     {"caption": "Adapted - Walks a Few Steps", "src": "videos/nav4-crop.mp4"},
-     {"caption": "Adapted - Walks", "src": "videos/nav5-crop.mp4"},
-     {"caption": "Adapted - Walks towards the Shelf", "src": "videos/nav6-crop.mp4"},
+     {"caption": "Adapted Generation - Walks on the Grass", "src": "videos/nav1-crop.mp4"},
+     {"caption": "Adapted Generation - Walks around", "src": "videos/nav2-crop.mp4"},
+     {"caption": "Adapted Generation - Walks forward", "src": "videos/nav3-crop.mp4"},
+     {"caption": "Adapted Generation - Walks a Few Steps", "src": "videos/nav4-crop.mp4"},
+     {"caption": "Adapted Generation - Walks", "src": "videos/nav5-crop.mp4"},
+     {"caption": "Adapted Generation - Walks towards the Shelf", "src": "videos/nav6-crop.mp4"},
      
-     {"caption": "Adapted - Removes Left Hand from Cable at the Bicycle's Seat", "src": "videos/gen1-crop.mp4"},
-     {"caption": "Adapted - Drills the Wood with the Drill", "src": "videos/gen2-crop.mp4"},
-     {"caption": "Adapted - Drops a Fabric", "src": "videos/gen3-crop.mp4"},
-     {"caption": "Adapted - Drops the Slice of Cheese on the Sink", "src": "videos/gen4-crop.mp4"},
-     {"caption": "Adapted - Puts Wood on Table", "src": "videos/gen5-crop.mp4"},
-     {"caption": "Adapted - Holds the Book with Both Hand", "src": "videos/gen6-crop.mp4"},
-     {"caption": "Adapted - Unties the Plant ", "src": "videos/gen7-crop.mp4"},
-     {"caption": "Adapted - Scrubs Hands on the Sand on the Floor", "src": "videos/gen8-crop.mp4"},
+     {"caption": "Adapted Generation - Removes Left Hand from Cable at the Bicycle's Seat", "src": "videos/gen1-crop.mp4"},
+     {"caption": "Adapted Generation - Drills the Wood with the Drill", "src": "videos/gen2-crop.mp4"},
+     {"caption": "Adapted Generation - Drops a Fabric", "src": "videos/gen3-crop.mp4"},
+     {"caption": "Adapted Generation - Drops the Slice of Cheese on the Sink", "src": "videos/gen4-crop.mp4"},
+     {"caption": "Adapted Generation - Puts Wood on Table", "src": "videos/gen5-crop.mp4"},
+     {"caption": "Adapted Generation - Holds the Book with Both Hand", "src": "videos/gen6-crop.mp4"},
+     {"caption": "Adapted Generation - Unties the Plant ", "src": "videos/gen7-crop.mp4"},
+     {"caption": "Adapted Generation - Scrubs Hands on the Sand on the Floor", "src": "videos/gen8-crop.mp4"},
 
-     {"caption": "Adapted - Put Pot or Pan in Sink", "src": "videos/combine1.mp4"},
-     {"caption": "Adapted - Put Corn into Bowl", "src": "videos/combine4.mp4"},
+     {"caption": "Adapted Generation - Put Pot or Pan in Sink", "src": "videos/combine1.mp4"},
+     {"caption": "Adapted Generation - Put Corn into Bowl", "src": "videos/combine4.mp4"},
 
-     {"caption": "Adapted - Looks at the Phone Screen", "src": "videos/ego1-crop.mp4"},
-     {"caption": "Adapted - Wipes the Tip of the Detail Needle with Her Left Hand", "src": "videos/ego2-crop.mp4"},
-     {"caption": "Adapted - Paints the Piece of Wood", "src": "videos/ego3-crop.mp4"},
-     {"caption": "Adapted - Pats the Clay in the Mould with His Right Hand", "src": "videos/ego4-crop.mp4"},
-     {"caption": "Adapted - Dips Paintbrush in Paint in the Bucket", "src": "videos/ego5-crop.mp4"},
-     {"caption": "Adapted - Rubs the Pink Ball in Both Hand", "src": "videos/ego6-crop.mp4"},
-     {"caption": "Adapted - Adjusts the Jig Saw with Both Hands", "src": "videos/ego7-crop.mp4"},
-     {"caption": "Adapted - Walks around", "src": "videos/ego8-crop.mp4"},
-     {"caption": "Adapted - Dries the Greens with Kitchen Tissue", "src": "videos/ego9-crop.mp4"},
-     {"caption": "Adapted - Picks a Scrubber", "src": "videos/ego10-crop.mp4"},
-     {"caption": "Adapted - Cuts the Piece of Wood with the Miter Saw", "src": "videos/ego11-crop.mp4"},
-     {"caption": "Adapted - Look at the Food", "src": "videos/ego12-crop.mp4"},
-     {"caption": "Adapted - Place the Piece", "src": "videos/ego13-crop.mp4"},
-     {"caption": "Adapted - Turns over the Dough", "src": "videos/ego14-crop.mp4"},
+     {"caption": "Adapted Generation - Looks at the Phone Screen", "src": "videos/ego1-crop.mp4"},
+     {"caption": "Adapted Generation - Wipes the Tip of the Detail Needle with Her Left Hand", "src": "videos/ego2-crop.mp4"},
+     {"caption": "Adapted Generation - Paints the Piece of Wood", "src": "videos/ego3-crop.mp4"},
+     {"caption": "Adapted Generation - Pats the Clay in the Mould with His Right Hand", "src": "videos/ego4-crop.mp4"},
+     {"caption": "Adapted Generation - Dips Paintbrush in Paint in the Bucket", "src": "videos/ego5-crop.mp4"},
+     {"caption": "Adapted Generation - Rubs the Pink Ball in Both Hand", "src": "videos/ego6-crop.mp4"},
+     {"caption": "Adapted Generation - Adjusts the Jig Saw with Both Hands", "src": "videos/ego7-crop.mp4"},
+     {"caption": "Adapted Generation - Walks around", "src": "videos/ego8-crop.mp4"},
+     {"caption": "Adapted Generation - Dries the Greens with Kitchen Tissue", "src": "videos/ego9-crop.mp4"},
+     {"caption": "Adapted Generation - Picks a Scrubber", "src": "videos/ego10-crop.mp4"},
+     {"caption": "Adapted Generation - Cuts the Piece of Wood with the Miter Saw", "src": "videos/ego11-crop.mp4"},
+     {"caption": "Adapted Generation - Look at the Food", "src": "videos/ego12-crop.mp4"},
+     {"caption": "Adapted Generation - Place the Piece", "src": "videos/ego13-crop.mp4"},
+     {"caption": "Adapted Generation - Turns over the Dough", "src": "videos/ego14-crop.mp4"},
 
-     {"caption": "Adapted - Put Eggplant in Pot", "src": "videos/combine2.mp4"},
-     {"caption": "Adapted - Put Pan from Drying Rack into Sink", "src": "videos/combine3.mp4"},
+     {"caption": "Adapted Generation - Put Eggplant in Pot", "src": "videos/combine2.mp4"},
+     {"caption": "Adapted Generation - Put Pan from Drying Rack into Sink", "src": "videos/combine3.mp4"},
  ];
 	  eg4d_videos = hdvideos.sort((a, b) => 0.5 - Math.random());;
 
@@ -347,25 +347,25 @@ During sampling, Video Adapter composes the scores of the pretrained and the dom
 
       function addVideoPane1() {
  videos = [
-     {"caption": "Original - Happy Holidays Animated Card", "src": "videos/anime1-1.mp4"},
-     {"caption": "Adapted - Storybook Illustration", "src": "videos/anime1-3.mp4"},
-     {"caption": "Adapted - Digital Art", "src": "videos/anime1-4.mp4"},
-     {"caption": "Adapted - Outdoors Video", "src": "videos/anime1-5.mp4"},
+     {"caption": "Original Generation - Happy Holidays Animated Card", "src": "videos/anime1-1.mp4"},
+     {"caption": "Adapted Generation - Storybook Illustration", "src": "videos/anime1-3.mp4"},
+     {"caption": "Adapted Generation - Digital Art", "src": "videos/anime1-4.mp4"},
+     {"caption": "Adapted Generation - Outdoors Video", "src": "videos/anime1-5.mp4"},
 
-     {"caption": "Original - Podium with Moving Clouds and Lamps", "src": "videos/anime2-1.mp4"},
-     {"caption": "Adapted - Arcade Style", "src": "videos/anime2-2.mp4"},
-     {"caption": "Adapted - Blue Sunny Day", "src": "videos/anime2-3.mp4"},
-     {"caption": "Adapted - Scifi", "src": "videos/anime2-4.mp4"},
+     {"caption": "Original Generation  - Podium with Moving Clouds and Lamps", "src": "videos/anime2-1.mp4"},
+     {"caption": "Adapted Generation - Arcade Style", "src": "videos/anime2-2.mp4"},
+     {"caption": "Adapted Generation - Blue Sunny Day", "src": "videos/anime2-3.mp4"},
+     {"caption": "Adapted Generation - Scifi", "src": "videos/anime2-4.mp4"},
 
-     {"caption": "Original - Astronaut on the Moon Surface near a US Flag", "src": "videos/scifi1-1.mp4"},
-     {"caption": "Adapted - Concept Art", "src": "videos/scifi1-2.mp4"},
-     {"caption": "Adapted - Black and White", "src": "videos/scifi1-3.mp4"},
-     {"caption": "Adapted - Vintage Film", "src": "videos/scifi1-4.mp4"},
+     {"caption": "Original Generation  - Astronaut on the Moon Surface near a US Flag", "src": "videos/scifi1-1.mp4"},
+     {"caption": "Adapted Generation - Concept Art", "src": "videos/scifi1-2.mp4"},
+     {"caption": "Adapted Generation - Black and White", "src": "videos/scifi1-3.mp4"},
+     {"caption": "Adapted Generation - Vintage Film", "src": "videos/scifi1-4.mp4"},
 
-     {"caption": "Original - Retro Night City ", "src": "videos/scifi2-1.mp4"},
-     {"caption": "Adapted - Dark Night Sky", "src": "videos/scifi2-2.mp4"},
-     {"caption": "Adapted - Red Sun over Stadium", "src": "videos/scifi2-3.mp4"},
-     {"caption": "Adapted - Snow Falling", "src": "videos/scifi2-4.mp4"},
+     {"caption": "Original Generation  - Retro Night City ", "src": "videos/scifi2-1.mp4"},
+     {"caption": "Adapted Generation - Dark Night Sky", "src": "videos/scifi2-2.mp4"},
+     {"caption": "Adapted Generation - Red Sun over Stadium", "src": "videos/scifi2-3.mp4"},
+     {"caption": "Adapted Generation - Snow Falling", "src": "videos/scifi2-4.mp4"},
  ];
 
  globalVideoIdx = 0;
